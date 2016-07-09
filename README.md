@@ -92,14 +92,18 @@ SUCCESS
 ### LIGHT:[SIDE]/[OPERATION]/[LED]/[COLOR]/[BRIGHTNESS]
 #### SIDE
 - Side of bar: A, B, C, D
+
 #### OPERATION
 - `* New lighting pattern`
 - `+ Add led color`
 - `+ Remove led`
+
 #### LED
 - Number of LED: 1 - 11
+
 #### COLOR
 - HEX code, e.g. ff0000
+
 #### BRIGHTNESS
 - 0 - 100 %
 
@@ -134,14 +138,16 @@ SUCCESS
 ```
 
 ### MOVE:[POSITION]/[STEPMODE]
-- POSITION
-  Bar position 0 - 100 %
-- STEPMODE
-  - full
-  - half
-  - quarter
-  - eigthth
-  - sixteenth
+
+#### POSITION
+- Bar position 0 - 100 %
+  
+#### STEPMODE
+- full
+- half
+- quarter
+- eigthth
+- sixteenth
 
 ```
 $  node i2c-cmd.js 18 MOVE:75/half
