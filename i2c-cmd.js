@@ -59,11 +59,11 @@ var execute = function(target, command) {
     console.log('- POSITION');
     console.log('  Bar position 0 - 100 %');
     console.log('- STEPMODE');
-    console.log('  FULL');
-    console.log('  HALF');
-    console.log('  QUARTER');
-    console.log('  EIGTHTH');
-    console.log('  SIXTEENTH');
+    console.log('  full');
+    console.log('  half');
+    console.log('  quarter');
+    console.log('  eigthth');
+    console.log('  sixteenth');
 
   } else {
 
