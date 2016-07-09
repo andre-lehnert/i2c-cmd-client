@@ -2,23 +2,29 @@ var i2c = require('i2c');
 var MASTER = 0x0f;
 var wire  = new i2c(MASTER, {device: '/dev/i2c-1'}); // point to your i2c address, debug provides REPL interface
 
-var scan = function(target, command, callback) {
+module.exports = {
+
+scan : function(target, command, callback) {
 
   wire.scan(function(err, data) {
     // result contains an array of addresses
     if (!err) {
-      console.log('COMPLETE: '+data);
-      callback(data, target, command);
+      console.log('I2C RECEIVERS: '+data);
+
+      if (typeof command != 'undefined' && typeof target != 'undefined') 
+        if (command != 'SCAN')
+          callback(data, target, command);
     } else {
       console.log('ERROR: '+err);
     }
   });
 
-};
+},
 
-var send = function(address, message) {
+send : function(address, message, res, response) {
 
-    console.log("Send to "+address+": "+message);
+    console.log("SEND COMMAND ["+address+"]: "+message);
+    res.done = true;
 
     wire.setAddress(address);
     var bytes = [];
@@ -30,24 +36,33 @@ var send = function(address, message) {
     wire.writeBytes(0, bytes, function(err) {
 
       if (err != null) {
-        console.log(err)
+        console.log("ERROR: "+err)
+        response(res);
       } else {
-        console.log("Send to "+address+": "+message);
+        res.success = true;
+        response(res);
       }
     });
-};
+},
 
-var request = function(address) {
+request : function(address, res, response) {
 
-    console.log("Request "+address);
+    console.log("REQUEST ["+address+"]");
+    res.done = true;
 
     wire.setAddress(address);
 
-    wire.readByte(function(err, res) {
+    wire.readByte(function(err, result) {
       if (err != null) {
-        console.log(err)
+        console.log("ERROR: "+err);
+        response(res);
       } else {
-        console.log("Receive "+address+": "+res);
+        console.log("RECEIVE ["+address+"]: "+result);
+        res.success = true;
+        res.value = result;
+        response(res);
       }
     });
+}
+
 };
