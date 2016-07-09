@@ -25,12 +25,12 @@ I2C RECEIVERS: 16,18,19
 - COMMAND
   see COMMANDs
 
-## COMMANDs
+### COMMANDs
 
-### node i2c-cmd.js [RECEIVER] SCAN
+#### node i2c-cmd.js [RECEIVER] SCAN
 - Get all available i2c receiver
 
-### node i2c-cmd.js [RECEIVER] STATUS
+#### node i2c-cmd.js [RECEIVER] STATUS
 - Get Token ID
 
 ```
@@ -51,9 +51,9 @@ RECEIVE [18]: 0
 VALUE: 0
 ```
 
-### ANI:[ANIMATION]/[COLOR]/[BRIGHTNESS]/[SPEED]
+#### ANI:[ANIMATION]/[COLOR]/[BRIGHTNESS]/[SPEED]
 
-#### ANIMATION
+##### ANIMATION
 - on (switch-on)
 - off (switch-off)
 - bli (blink)
@@ -64,13 +64,13 @@ VALUE: 0
 - com (comet)
 - bou (bouncing)
 
-#### COLOR
+##### COLOR
 - color hex code, e.g. ff0000
 
-#### BRIGHTNESS
+##### BRIGHTNESS
 - 0 - 100 %
   
-#### SPEED
+##### SPEED
 - 0 - 100 %
 
 ```
@@ -89,22 +89,23 @@ SEND COMMAND [19]: ANI:up/00fff0/100/70
 SUCCESS
 ```
 
-### LIGHT:[SIDE]/[OPERATION]/[LED]/[COLOR]/[BRIGHTNESS]
-#### SIDE
+#### LIGHT:[SIDE]/[OPERATION]/[LED]/[COLOR]/[BRIGHTNESS]
+
+##### SIDE
 - Side of bar: A, B, C, D
 
-#### OPERATION
+##### OPERATION
 - `* New lighting pattern`
 - `+ Add led color`
 - `+ Remove led`
 
-#### LED
+##### LED
 - Number of LED: 1 - 11
 
-#### COLOR
+##### COLOR
 - HEX code, e.g. ff0000
 
-#### BRIGHTNESS
+##### BRIGHTNESS
 - 0 - 100 %
 
 ```
@@ -137,12 +138,12 @@ SEND COMMAND [19]: LIGHT:A/-/1
 SUCCESS
 ```
 
-### MOVE:[POSITION]/[STEPMODE]
+#### MOVE:[POSITION]/[STEPMODE]
 
-#### POSITION
+##### POSITION
 - Bar position 0 - 100 %
   
-#### STEPMODE
+##### STEPMODE
 - full
 - half
 - quarter
