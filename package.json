@@ -1,6 +1,6 @@
 {
   "name": "i2c-cmd-client",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This tools tests the i2c communication with some arduino i2c clients",
   "main": "i2c-cmd.js",
   "scripts": {
