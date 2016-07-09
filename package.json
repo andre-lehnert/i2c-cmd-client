@@ -1,0 +1,26 @@
+{
+  "name": "i2c-cmd-client",
+  "version": "1.0.0",
+  "description": "This tools tests the i2c communication with some arduino i2c clients",
+  "main": "i2c-cmd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andre-lehnert/i2c-cmd-client.git"
+  },
+  "keywords": [
+    "i2c",
+    "node"
+  ],
+  "author": "Andre Lehnert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andre-lehnert/i2c-cmd-client/issues"
+  },
+  "homepage": "https://github.com/andre-lehnert/i2c-cmd-client#readme",
+  "dependencies": {
+    "i2c": "^0.2.3"
+  }
+}
